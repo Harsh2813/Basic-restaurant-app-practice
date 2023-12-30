@@ -10,13 +10,17 @@ const CartProvider = (props) => {
     }
 
     const removeItemToCartHandler = (id) => {
-
+        setItems(items.filter(item => item.id !== id));
     }
+    const updateItemsHandler = (updatedItems) => {
+        setItems(updatedItems);
+    };
 
     const cartContext = {
         items: items,//if we dont used useState then after reloading page of after re render this items array got empty, so we have to pass updated items here
         addItem: addItemToCartHandler, //now in CartContext it was having just fn here we initialized it with value
         removeItem: removeItemToCartHandler,// above fn will give values to here so now it is updated with values
+        updateItems: updateItemsHandler,
     }
 
     return (

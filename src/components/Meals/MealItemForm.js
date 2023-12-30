@@ -11,7 +11,8 @@ const MealItemForm = (props) => {
 
   const addItemToCart = (event) =>  {
     event.preventDefault();
-    cartCxt.addItem({ ...props.item, quantity: +quantity }); // Convert quantity to a number//we increase and passed to fn with added whole item obj(which is whole props which we received from main parent AvailableMeals) to items array. NOTE- we are working with our own DUMMY_ITEMS.
+    cartCxt.addItem({ ...props.item, quantity: +quantity });
+    console.log(props); // Convert quantity to a number//we increase and passed to fn with added whole item obj(which is whole props which we received from main parent AvailableMeals) to items array. NOTE- we are working with our own DUMMY_ITEMS.
   }
   const quantityChangeHandler = (event) => {
     setQuantity(event.target.value);
